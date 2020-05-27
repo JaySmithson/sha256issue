@@ -1,0 +1,47 @@
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
+gpg: Signature made Thu Apr 23 09:46:21 2020 EDT
+gpg:                using RSA key D94AA3F0EFE21092
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --keyserver khp://keyserver.ubuntu.com --recv-keshunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --keyserver khp://keyserver.ubuntu.com --recv-keys 0xD94AA3F0EFE21092
+gpg: connecting dirmngr at '/home/shunix/.gnupg/S.dirmngr' failed: IPC connect call failed
+gpg: keyserver receive failed: No dirmngr
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
+gpg: can't open signed data 'SHA256SUMS'
+gpg: can't hash datafile: No such file or directory
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
+gpg: Signature made Thu Apr 23 09:46:21 2020 EDT
+gpg:                using RSA key D94AA3F0EFE21092
+gpg: Can't check signature: No public key
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --keyserver hkp://keyserver.ubuntu.com --recv-keys 0XD94AA3F0EFE21092
+gpg: "0XD94AA3F0EFE21092" not a key ID: skipping
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --keyserver hkp://keyserver.ubuntu.com --recv-keys 0xD94AA3F0EFE21092
+gpg: key D94AA3F0EFE21092: public key "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>" imported
+gpg: can't connect to the agent: IPC connect call failed
+gpg: Total number processed: 1
+gpg:               imported: 1
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --list-keys --with-fingerprint 0xD94AA3F0EFE21092
+pub   rsa4096/D94AA3F0EFE21092 2012-05-11 [SC]
+      Key fingerprint = 8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092
+uid                 [ unknown] Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>
+
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS
+gpg: can't open signed data 'SHA256SUMS'
+gpg: can't hash datafile: No such file or directory
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ gpg --keyid-format long --verify SHA256SUMS.gpg SHA256SUMS.txt
+gpg: Signature made Thu Apr 23 09:46:21 2020 EDT
+gpg:                using RSA key D94AA3F0EFE21092
+gpg: Good signature from "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ sha256sum ubuntu-20.04-desktop-amd64.iso
+e5b72e9cfe20988991c9cd87bde43c0b691e3b67b01f76d23f8150615883ce11  ubuntu-20.04-desktop-amd64.iso
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ sha256sum -c <(grep ubuntu-20.04-desktop-amd64.iso SHA256SUMS)
+grep: SHA256SUMS: No such file or directory
+sha256sum: /dev/fd/63: no properly formatted SHA256 checksum lines found
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ sha256sum -c <(grep ubuntu-20.04-desktop-amd64.iso SHA256SUMS.txt)
+^[[A^[[
+
+ubuntu-20.04-desktop-amd64.iso: OK
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$ sha256sum -c <(grep ubuntu-20.04-desktop-amd64.iso SHA256SUMS.txt)
+ubuntu-20.04-desktop-amd64.iso: OK
+shunix@DESKTOP-74T9H9J:/mnt/c/UBUNTU ISO CKSUM$                                                           
